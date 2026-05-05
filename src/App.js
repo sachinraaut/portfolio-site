@@ -122,7 +122,7 @@ export default function Portfolio() {
         <div className="hero-right">
           <h1 className="hero-title">
             <span className="hero-title-main">Software</span>
-            <span className="hero-title-ghost">Engineer</span>
+            <span className="hero-title-main">Engineer</span>
           </h1>
           <p className="hero-desc">
             Passionate frontend developer with hands-on experience in building scalable, high-performance web applications. Specialized in Salesforce Commerce Cloud (SFCC), Magento, and modern JavaScript ecosystems.
@@ -164,7 +164,7 @@ export default function Portfolio() {
       <Section id="projects">
         <div className="section-heading">
           <span className="sh-top">Recent</span>
-          <span className="sh-bottom">Projects</span>
+          <span className="sh-top">Projects</span>
         </div>
         <div className="project-list">
           {PROJECTS.map((p) => (
@@ -184,7 +184,7 @@ export default function Portfolio() {
       <Section id="experience">
         <div className="section-heading">
           <span className="sh-top">7+ Years of</span>
-          <span className="sh-bottom">Experience</span>
+          <span className="sh-top">Experience</span>
         </div>
         <div className="exp-list">
           {EXPERIENCE.map((e) => (
@@ -206,7 +206,7 @@ export default function Portfolio() {
       <Section id="tools">
         <div className="section-heading">
           <span className="sh-top">Tools</span>
-          <span className="sh-bottom">Used</span>
+          <span className="sh-top">Used</span>
         </div>
         <div className="tools-grid">
           {TOOLS.map((t) => (
@@ -224,8 +224,8 @@ export default function Portfolio() {
       {/* BLOG */}
       <Section id="blog">
         <div className="section-heading">
-          <span className="sh-top">Design</span>
-          <span className="sh-bottom">Thoughts</span>
+          <span className="sh-top">Articles</span>
+          <span className="sh-top">Written</span>
         </div>
         <div className="blog-list">
           {BLOGS.map((b) => (
