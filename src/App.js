@@ -22,6 +22,19 @@ const PROJECTS = [
   { name: "Arrowhead", type: "Shopify, Next.JS, CSS3, jQuery", emoji: "🌐" },
 ];
 
+const SERVICES = [
+  {
+    icon: "⚡",
+    title: ["JavaScript, React", "HTML5, CSS3"],
+    className: "service-card-orange"
+  },
+  {
+    icon: "▦",
+    title: ["SFCC, Shopify", "Magento, WordPress"],
+    className: "service-card-lime"
+  }
+];
+
 const EXPERIENCE = [
   {
     company: "Dentsu World Services",
@@ -142,25 +155,26 @@ export default function Portfolio() {
           </div>
 
           <div className="service-cards">
-            <div className="service-card service-card-orange">
-              <div className="service-card-icon">
-                <span>⚡</span>
+            {SERVICES.map((service, index) => (
+              <div className={`service-card ${service.className}`} key={index}>              
+                <div className="service-card-icon">
+                  <span style={{ fontSize: "18px" }}>{service.icon}</span>
+                </div>
+                <div className="service-card-title">
+                  {service.title.map((line, i) => (
+                    <span key={i}>
+                      {line}
+                      {i !== service.title.length - 1 && <br />}
+                    </span>
+                  ))}
+                </div>
+                <div className="service-card-arrow">↗</div>
               </div>
-              <div className="service-card-title">JavaScript, React,<br />HTML5, CSS3</div>
-              <div className="service-card-arrow">↗</div>
-            </div>
-            <div className="service-card service-card-lime">
-              <div className="service-card-icon">
-                <span style={{ fontSize: "18px" }}>▦</span>
-              </div>
-              <div className="service-card-title">SFCC, Shopify,<br />Magento, WordPress</div>
-              <div className="service-card-arrow">↗</div>
-            </div>
+            ))}
           </div>
+
         </div>
       </div>
-
-      {/* RECENT PROJECTS */}
       <Section id="projects">
         <div className="section-heading">
           <span className="sh-top">Recent</span>
@@ -179,8 +193,6 @@ export default function Portfolio() {
           ))}
         </div>
       </Section>
-
-      {/* EXPERIENCE */}
       <Section id="experience">
         <div className="section-heading">
           <span className="sh-top">7+ Years of</span>
@@ -201,8 +213,6 @@ export default function Portfolio() {
           ))}
         </div>
       </Section>
-
-      {/* TOOLS */}
       <Section id="tools">
         <div className="section-heading">
           <span className="sh-top">Tools</span>
@@ -220,8 +230,6 @@ export default function Portfolio() {
           ))}
         </div>
       </Section>
-
-      {/* BLOG */}
       <Section id="blog">
         <div className="section-heading">
           <span className="sh-top">Articles</span>
@@ -244,12 +252,10 @@ export default function Portfolio() {
           ))}
         </div>
       </Section>
-
-      {/* CONTACT */}
       <Section id="contact">
         <div className="section-heading">
           <span className="sh-top">Connect</span>
-          <span className="sh-bottom">With me</span>
+          <span className="sh-top">With me</span>
         </div>
         <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
           <div className="form-row">
@@ -293,8 +299,6 @@ export default function Portfolio() {
           <button className="form-submit" type="submit">Submit →</button>
         </form>
       </Section>
-
-      {/* FOOTER */}
       <footer className="footer">
         <span>Made by Sachin Raut</span>
         <span>© 2026 All rights reserved</span>
